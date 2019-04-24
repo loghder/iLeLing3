@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.SYFragment">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/Topbar_sy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qmui_topbar_bg_color="@color/modPink"
+        app:qmui_topbar_text_btn_color_state_list="@android:color/white"
+        app:qmui_topbar_title_color="@android:color/white"></com.qmuiteam.qmui.widget.QMUITopBar>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView2">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/rotate_listview_bg"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/semicircle_circle" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/CircleImage"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/l2" />
+
+            <github.liusp.rotatelistview.RotateListView
+                android:id="@+id/rotate_listview"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="距离宝宝出生还有"
+            android:textColor="@color/darkPink"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <TextView
+            android:id="@+id/textView02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="251天"
+            android:textColor="@color/darkPink"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView01"
+            app:layout_constraintStart_toStartOf="@+id/textView01"
+            app:layout_constraintTop_toBottomOf="@+id/textView01" />
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="今"
+            android:textColor="@color/white"
+            android:id="@+id/todayButton"
+            app:layout_constraintBottom_toBottomOf="@+id/textView02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView02"
+            app:qmui_backgroundColor="@color/modPink"
+            app:qmui_borderColor="@color/darkPink"
+            app:qmui_borderWidth="1px" />
+
+        <TextView
+            android:id="@+id/bbbh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/modPink"
+            android:padding="5dp"
+            android:text="宝宝变化"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView02" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="我的牙槽已经成型，今后，我的20颗小乳牙就会从这里长出来。我的眉毛开始生长，头顶上有了零星的头发。"
+            android:textSize="14sp"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bbbh" />
+
+        <TextView
+            android:id="@+id/mmbh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/modPink"
+            android:padding="5dp"
+            android:text="妈妈变化"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="随着肚子增加生活会有些不便，家务活这些事情就交给准爸爸吧。"
+            android:textSize="14sp"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mmbh" />
+
+        <TextView
+            android:id="@+id/yqzx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/modPink"
+            android:padding="5dp"
+            android:text="孕期资讯"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <com.mami.care.Util.MyListView
+            android:id="@+id/listview01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yqzx">
+
+        </com.mami.care.Util.MyListView>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

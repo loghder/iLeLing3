@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/modPink"
+    android:fitsSystemWindows="true"
+    tools:context=".WebActivity">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/Topbar_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qmui_topbar_bg_color="@color/modPink"
+        app:qmui_topbar_text_btn_color_state_list="@android:color/white"
+        app:qmui_topbar_title_color="@android:color/white"></com.qmuiteam.qmui.widget.QMUITopBar>
+
+    <WebView
+        android:id="@+id/WebView01"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Topbar_web">
+
+    </WebView>
+
+</android.support.constraint.ConstraintLayout>
