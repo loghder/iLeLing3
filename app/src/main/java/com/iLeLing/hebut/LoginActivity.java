@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(LoginActivity.this,Register.class));
             }
         });
         mQMUIRoundButton.setOnClickListener(new View.OnClickListener() {

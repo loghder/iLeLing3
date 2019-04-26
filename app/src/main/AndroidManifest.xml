@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".WebActivity" />
+        <activity android:name=".Register" />
         <activity android:name=".MainActivity">
         </activity>
     </application>
