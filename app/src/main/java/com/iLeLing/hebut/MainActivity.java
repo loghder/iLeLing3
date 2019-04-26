@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
 
     private EasyNavigationBar navigationBar;
     //底部Tab相关
-    private String[] tabText = {"首页", "新闻", "搜索","账户"};
+    private String[] tabText = {"首页", "任务", "搜索","账户"};
     //未选中icon
     private int[] normalIcon = {R.mipmap.tab01, R.mipmap.tab02, R.mipmap.tab03,R.mipmap.tab04};
     //选中时icon
