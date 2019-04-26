@@ -2,14 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/modGreen"
-    android:fitsSystemWindows="true"
-    tools:context=".WebActivity">
+    android:background="@color/qmui_config_color_white"
+    tools:context=".fragment.ThreeFragment">
 
     <com.qmuiteam.qmui.widget.QMUITopBar
-        android:id="@+id/Topbar_web"
+        android:id="@+id/Topbar_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,16 +18,5 @@
         app:qmui_topbar_bg_color="@color/modGreen"
         app:qmui_topbar_text_btn_color_state_list="@android:color/white"
         app:qmui_topbar_title_color="@android:color/white"></com.qmuiteam.qmui.widget.QMUITopBar>
-
-    <WebView
-        android:id="@+id/WebView01"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Topbar_web">
-
-    </WebView>
 
 </android.support.constraint.ConstraintLayout>

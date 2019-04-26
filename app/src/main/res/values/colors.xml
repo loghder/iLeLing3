@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="modPink">#e2b7a6</color>
-    <color name="darkPink">#D57037</color>
+    <color name="modGreen">#53caa7</color>
+    <color name="darkGreen">#0ABE89</color>
     <color name="white">#ffffff</color>
     <color name="white90">#90ffffff</color>
 </resources>
