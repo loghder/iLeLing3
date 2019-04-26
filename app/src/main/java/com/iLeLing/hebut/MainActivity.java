@@ -23,8 +23,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener {
 
     private EasyNavigationBar navigationBar;
-    private Button microphone;
-
     //底部Tab相关
     private String[] tabText = {"首页", "新闻", "搜索","账户"};
     //未选中icon
