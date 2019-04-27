@@ -24,6 +24,7 @@ import com.qmuiteam.qmui.util.QMUIViewHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class ThreeFragment extends Fragment {
 
@@ -38,11 +39,14 @@ public class ThreeFragment extends Fragment {
         String lv;
         String detail;
         int Imageid;
+        double score;
+        double[] sc={4.7,4.85,4.9};
 
         MyItem(String title,String lv,String detail,int Imageid){
             this.title=title;
             this.detail=detail;
             this.Imageid=Imageid;
+            this.score=sc[new Random().nextInt(3)];
             this.lv=lv;
         }
 
@@ -60,6 +64,10 @@ public class ThreeFragment extends Fragment {
 
         public String getLv() {
             return lv;
+        }
+
+        public double getScore() {
+            return score;
         }
     }
 
@@ -84,6 +92,7 @@ public class ThreeFragment extends Fragment {
                 viewHolder.fruitName = (TextView) view.findViewById (R.id.textView2);
                 viewHolder.lvv=view.findViewById(R.id.textView7);
                 viewHolder.detail=view.findViewById(R.id.textView5);
+                viewHolder.score=view.findViewById(R.id.textView6);
                 view.setTag(viewHolder); // 将ViewHolder存储在View中
             } else {
                 view = convertView;
@@ -93,6 +102,7 @@ public class ThreeFragment extends Fragment {
             viewHolder.fruitName.setText(item.getTitle());
             viewHolder.detail.setText(item.getDetail());
             viewHolder.lvv.setText(item.getLv());
+            viewHolder.score.setText(""+item.getScore());
             return view;
         }
 
@@ -101,6 +111,7 @@ public class ThreeFragment extends Fragment {
             TextView fruitName;
             TextView detail;
             TextView lvv;
+            TextView score;
         }
     }
 
@@ -148,7 +159,7 @@ public class ThreeFragment extends Fragment {
         myItemList=new ArrayList<>();
         myItemListBackUp=new ArrayList<>();
         String[] name={"高素雅","唐姗","王丽梦"};
-        String[] lv={"高级护工","普通护工","护士"};
+        String[] lv={"高级护工 长期","普通护工 短期","护士 长期"};
         String[] location={"天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里"};
         MyItem[] myItem=new MyItem[name.length];
         //添加两次，让数据显得多一点
@@ -184,18 +195,16 @@ public class ThreeFragment extends Fragment {
     }
 
     //筛选菜单
-    private String headers[] = {"级别", "年龄","附近", "食宿"};
+    private String headers[] = {"级别", "类型","评分"};
     private List<View> popupViews = new ArrayList<>();
 
     private GirdDropDownAdapter cityAdapter;
     private ListDropDownAdapter ageAdapter;
     private ListDropDownAdapter nearbyAdapter;
-    private ListDropDownAdapter foodAdapter;
 
     private String citys[] = {"不限","高级护工","普通护工","护士"};
-    private String ages[] = {"不限", "18-30", "30-40", "40-50"};
-    private String nearby[] = {"不限", "1km以内", "1-5km", "5km以上"};
-    private String food[] = {"不限", "包饭", "包住宿", "食宿全包"};
+    private String ages[] = {"不限", "短期",  "长期"};
+    private String nearby[] = {"从高到低", "从低到高"};
 
     private int constellationPosition = 0;
     private void initView() {
@@ -217,16 +226,10 @@ public class ThreeFragment extends Fragment {
         nearbyAdapter = new ListDropDownAdapter(mContext, Arrays.asList(nearby));
         nearbyView.setAdapter(nearbyAdapter);
 
-        final ListView foodView = new ListView(mContext);
-        foodView.setDividerHeight(0);
-        foodAdapter = new ListDropDownAdapter(mContext, Arrays.asList(food));
-        foodView.setAdapter(foodAdapter);
-
         //init popupViews
         popupViews.add(cityView);
         popupViews.add(ageView);
         popupViews.add(nearbyView);
-        popupViews.add(foodView);
 
         //筛选框点击事件
         cityView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
