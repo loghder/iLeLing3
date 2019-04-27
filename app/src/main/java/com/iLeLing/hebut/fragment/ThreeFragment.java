@@ -3,6 +3,7 @@ package com.iLeLing.hebut.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.iLeLing.hebut.LoginActivity;
+import com.iLeLing.hebut.MaigugongActivity;
+import com.iLeLing.hebut.MainActivity;
 import com.iLeLing.hebut.R;
 import com.iLeLing.hebut.Util.ConstellationAdapter;
 import com.iLeLing.hebut.Util.GirdDropDownAdapter;
@@ -174,11 +178,13 @@ public class ThreeFragment extends Fragment {
         myItemListBackUp.addAll(myItemList);
         myAdapter=new MyAdapter(getContext(),R.layout.item_list2,myItemList);
         mListView.setAdapter(myAdapter);
+        final Activity activity=getActivity();
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
+                        startActivity(new Intent(getContext(),MaigugongActivity.class));
                         break;
                     case 1:
                         break;
