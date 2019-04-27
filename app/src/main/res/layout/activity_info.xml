@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InfoActivity">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qmui_topbar_bg_color="@color/modGreen"
+        app:qmui_topbar_text_btn_color_state_list="@android:color/white"
+        app:qmui_topbar_title_color="@android:color/white"></com.qmuiteam.qmui.widget.QMUITopBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/home">
+
+        <com.iLeLing.hebut.Util.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/pic2" />
+
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/info"
+                android:background="#fff"
+                android:singleLine="false"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:text="姓名:小i\n年龄：42\n地址：天津市北辰佳园里\n"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <Button
+                    android:id="@+id/contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系护工"
+                    android:textSize="25sp" />
+
+                <Button
+                    android:id="@+id/purchase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="购买服务"
+                    android:textSize="25sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="   专业技能"
+        android:textSize="30sp"
+        android:textFontWeight="9"/>
+    <ImageView
+        android:src="@drawable/fenge"
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+    <TextView
+
+        android:id="@+id/year"
+        android:text="   从业年限:0~3年"
+        android:textSize="25sp"
+        android:textFontWeight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/fenge"
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+    <TextView
+
+        android:id="@+id/time"
+        android:text="   工作时间:全天"
+        android:textSize="25sp"
+        android:textFontWeight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/fenge"
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+    <TextView
+
+        android:id="@+id/price"
+        android:text="   服务价格：25/小时"
+        android:textSize="25sp"
+        android:textFontWeight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/fenge"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"  />
+    <TextView
+
+        android:id="@+id/intro"
+        android:text="   自我介绍：性格开朗擅长象棋五子棋等"
+        android:textSize="25sp"
+        android:textFontWeight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

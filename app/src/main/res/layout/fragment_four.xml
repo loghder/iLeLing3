@@ -112,7 +112,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"></com.iLeLing.hebut.Util.ShapeLX>
+        app:layout_constraintTop_toBottomOf="@+id/line2"/>
 
     <com.iLeLing.hebut.Util.ShapeLX
         android:id="@+id/shapeLX02"
@@ -121,7 +121,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline12"
-        app:layout_constraintTop_toBottomOf="@+id/line2"></com.iLeLing.hebut.Util.ShapeLX>
+        app:layout_constraintTop_toBottomOf="@+id/line2"/>
 
     <com.iLeLing.hebut.Util.ShapeLX
         android:id="@+id/shapeLX03"
@@ -130,7 +130,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toBottomOf="@+id/line2"></com.iLeLing.hebut.Util.ShapeLX>
+        app:layout_constraintTop_toBottomOf="@+id/line2"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline12"

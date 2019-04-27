@@ -43,5 +43,6 @@ public class OneFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         bindViews();
         mTopbar_one.setTitle("首页");
+
     }
 }

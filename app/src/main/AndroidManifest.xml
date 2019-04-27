@@ -20,6 +20,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MaigugongActivity"></activity>
+        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".ContactActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

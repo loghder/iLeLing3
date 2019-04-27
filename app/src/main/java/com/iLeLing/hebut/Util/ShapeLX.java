@@ -24,6 +24,13 @@ public class ShapeLX extends ConstraintLayout {
         t2=findViewById(R.id.numLX);
     }
 
+    ShapeLX(Context context, AttributeSet attrs,int defStyle){
+        super(context, attrs);
+        LayoutInflater.from(context).inflate(R.layout.shape_layout, this, true);
+        t1=findViewById(R.id.titleLX);
+        t2=findViewById(R.id.numLX);
+    }
+
     ShapeLX(Context context,String title,String num){
         super(context);
         LayoutInflater.from(context).inflate(R.layout.shape_layout, this, true);

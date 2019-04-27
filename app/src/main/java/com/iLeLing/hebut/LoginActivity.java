@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         mQMUIRoundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));//改了一下这里试一下ContactActivity
                 finish();
             }
         });
