@@ -1,5 +1,6 @@
 package com.iLeLing.hebut;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +11,14 @@ import android.widget.ListView;
 
 import com.iLeLing.hebut.Util.Msg;
 import com.iLeLing.hebut.Util.MsgAdapter;
+import com.qmuiteam.qmui.widget.QMUITopBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContactActivity extends AppCompatActivity {
 
-
+        private QMUITopBar info_topbar;
         private ListView msgListView;
         private EditText inputText;
         private Button send;
@@ -27,6 +29,16 @@ public class ContactActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            info_topbar=findViewById(R.id.info_topbar);
+            info_topbar.setTitle("联系护工");
+            info_topbar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(ContactActivity.this,InfoActivity.class);
+                    startActivity(intent);
+                }
+            });
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_contact);
             initMsgs(); // 初始化消息数据

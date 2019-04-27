@@ -2,6 +2,7 @@ package com.iLeLing.hebut;
 
 import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.iLeLing.hebut.fragment.FiveFragment;
 import com.iLeLing.hebut.fragment.OneFragment;
 import com.iLeLing.hebut.fragment.TwoFragment;
 import com.iLeLing.hebut.fragment.FourFragment;
@@ -21,7 +23,7 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener {
+public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener, FiveFragment.OnFragmentInteractionListener {
 
     private EasyNavigationBar navigationBar;
     //底部Tab相关
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
         fragments.add(new OneFragment());
         fragments.add(new TwoFragment());
         fragments.add(new ThreeFragment());
-        fragments.add(new FourFragment());
+        fragments.add(new FiveFragment());
         navigationBar.titleItems(tabText)
                 .normalIconItems(normalIcon)
                 .selectIconItems(selectIcon)
@@ -103,4 +105,8 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

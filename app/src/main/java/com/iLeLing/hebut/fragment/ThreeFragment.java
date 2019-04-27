@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.iLeLing.hebut.InfoActivity;
 import com.iLeLing.hebut.LoginActivity;
 import com.iLeLing.hebut.MaigugongActivity;
 import com.iLeLing.hebut.MainActivity;
@@ -184,7 +185,7 @@ public class ThreeFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        startActivity(new Intent(getContext(),MaigugongActivity.class));
+                        startActivity(new Intent(getContext(), InfoActivity.class));
                         break;
                     case 1:
                         break;

@@ -18,7 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/lxshape" />
-
     <TextView
         android:id="@+id/titleLX"
         android:layout_width="wrap_content"

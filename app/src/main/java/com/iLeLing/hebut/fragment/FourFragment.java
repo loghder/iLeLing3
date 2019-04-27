@@ -12,7 +12,7 @@ import com.iLeLing.hebut.R;
 import com.iLeLing.hebut.Util.ShapeLX;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 
-public class FourFragment extends Fragment {
+public class FourFragment extends Fragment {//给护工端用的
 
 
     public FourFragment() {
@@ -29,10 +29,10 @@ public class FourFragment extends Fragment {
         Activity activity=getActivity();
         mFrameLayout = (android.support.constraint.ConstraintLayout) activity.findViewById(R.id.frameLayout);
         mTopbar_four = (com.qmuiteam.qmui.widget.QMUITopBar) activity.findViewById(R.id.Topbar_four);
-        shapeLX01=activity.findViewById(R.id.shapeLX01);
+        /*shapeLX01=activity.findViewById(R.id.shapeLX01);
         shapeLX02=activity.findViewById(R.id.shapeLX02);
         shapeLX03=activity.findViewById(R.id.shapeLX03);
-
+*/
     }
 
 
@@ -54,9 +54,9 @@ public class FourFragment extends Fragment {
             public void onClick(View view) {
 
             }
-        });
+        });/*
         shapeLX01.setTextInf("累计接单","21");
         shapeLX02.setTextInf("进行中","3");
-        shapeLX03.setTextInf("已完成","18");
+        shapeLX03.setTextInf("已完成","18");*/
     }
 }
