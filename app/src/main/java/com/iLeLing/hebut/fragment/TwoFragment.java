@@ -14,9 +14,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iLeLing.hebut.R;
 import com.iLeLing.hebut.Util.ConstellationAdapter;
@@ -36,68 +38,7 @@ public class TwoFragment extends Fragment {
         // Required empty public constructor
     }
 
-    //适配器相关
-    class MyItem{
-        String title;
-        String detail;
-        int Imageid;
 
-        MyItem(String title,String detail,int Imageid){
-            this.title=title;
-            this.detail=detail;
-            this.Imageid=Imageid;
-        }
-
-        public int getImageid() {
-            return Imageid;
-        }
-
-        public String getDetail() {
-            return detail;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-    }
-
-    class MyAdapter extends ArrayAdapter<MyItem> {
-        int resourceId;
-
-        public MyAdapter(Context context, int textViewResourceId,
-                         List<MyItem> objects) {
-            super(context, textViewResourceId, objects);
-            resourceId = textViewResourceId;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            MyItem item = getItem(position);
-            View view;
-            ViewHolder viewHolder;
-            if (convertView == null) {
-                view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-                viewHolder = new ViewHolder();
-                viewHolder.fruitImage = (ImageView) view.findViewById (R.id.imageView);
-                viewHolder.fruitName = (TextView) view.findViewById (R.id.textView2);
-                viewHolder.detail=view.findViewById(R.id.textView5);
-                view.setTag(viewHolder); // 将ViewHolder存储在View中
-            } else {
-                view = convertView;
-                viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
-            }
-            viewHolder.fruitImage.setImageResource(item.getImageid());
-            viewHolder.fruitName.setText(item.getTitle());
-            viewHolder.detail.setText(item.getDetail());
-            return view;
-        }
-
-        class ViewHolder {
-            ImageView fruitImage;
-            TextView fruitName;
-            TextView detail;
-        }
-    }
 
     ArrayList<MyItem> myItemList;
     ArrayList<MyItem> myItemListBackUp;
@@ -157,10 +98,11 @@ public class TwoFragment extends Fragment {
         myItemList.add(m4);
         myItemListBackUp.addAll(myItemList);
         myAdapter=new MyAdapter(getContext(),R.layout.item_list,myItemList);
-        mListView.setAdapter(myAdapter);
+
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), "Click item" + i, Toast.LENGTH_SHORT).show();
                 switch(i){
                     case 0:
                         break;
@@ -173,6 +115,7 @@ public class TwoFragment extends Fragment {
                 }
             }
         });
+        mListView.setAdapter(myAdapter);
         //筛选菜单
         initView();
     }
@@ -240,6 +183,8 @@ public class TwoFragment extends Fragment {
         });
 
 
+
+
         //init dropdownview
         mDropDownMenu.setDropDownMenu(Arrays.asList(headers), popupViews, mListView);
     }
@@ -254,4 +199,92 @@ public class TwoFragment extends Fragment {
         }
     }
 
+}
+
+//适配器相关
+class MyItem{
+    String title;
+    String detail;
+    int Imageid;
+    boolean isHeart=false;
+
+    MyItem(String title,String detail,int Imageid){
+        this.title=title;
+        this.detail=detail;
+        this.Imageid=Imageid;
+    }
+
+    public int getImageid() {
+        return Imageid;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isHeart() {
+        return isHeart;
+    }
+}
+
+class MyAdapter extends ArrayAdapter<MyItem> {
+    int resourceId;
+
+    public MyAdapter(Context context, int textViewResourceId,
+                     List<MyItem> objects) {
+        super(context, textViewResourceId, objects);
+        resourceId = textViewResourceId;
+    }
+
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        MyItem item = getItem(position);
+        View view;
+        final ViewHolder viewHolder;
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.fruitImage = (ImageView) view.findViewById (R.id.imageView);
+            viewHolder.fruitName = (TextView) view.findViewById (R.id.textView2);
+            viewHolder.detail=view.findViewById(R.id.textView5);
+            viewHolder.imageButton=view.findViewById(R.id.heartButton);
+            viewHolder.imageButton.setFocusable(false);
+            viewHolder.isHeart=item.isHeart();
+            view.setTag(viewHolder); // 将ViewHolder存储在View中
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
+        }
+        viewHolder.fruitImage.setImageResource(item.getImageid());
+        viewHolder.fruitName.setText(item.getTitle());
+        viewHolder.detail.setText(item.getDetail());
+        viewHolder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"红心被点击",Toast.LENGTH_SHORT).show();
+                if (!viewHolder.isHeart) {
+                    viewHolder.imageButton.setImageDrawable(getContext().getResources().getDrawable(R.mipmap.heart01));
+                    viewHolder.isHeart=true;
+                }else {
+                    viewHolder.imageButton.setImageDrawable(getContext().getResources().getDrawable(R.mipmap.heart02));
+                    viewHolder.isHeart=false;
+                }
+            }
+        });
+        return view;
+    }
+
+
+
+    class ViewHolder {
+        ImageView fruitImage;
+        TextView fruitName;
+        TextView detail;
+        ImageButton imageButton;
+        boolean isHeart;
+    }
 }
