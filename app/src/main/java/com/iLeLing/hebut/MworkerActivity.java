@@ -22,14 +22,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class SworkerActivity extends AppCompatActivity {
+public class MworkerActivity extends AppCompatActivity {
     //适配器相关
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sworker);
+        setContentView(R.layout.activity_mworker);
         bindViews();
-        mTopbar_three.setTitle("生活照料---护工信息");
+        mTopbar_three.setTitle("康复保健---护工信息");
         mTopbar_three.addRightImageButton(R.drawable.icon_map, QMUIViewHelper.generateViewId()).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,31 +39,31 @@ public class SworkerActivity extends AppCompatActivity {
         mTopbar_three.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SworkerActivity.this,MainActivity.class);
+                Intent intent=new Intent(MworkerActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
         //listview添加数据
         myItemList=new ArrayList<>();
         myItemListBackUp=new ArrayList<>();
-        final String[] name={"高素雅","唐姗","王丽梦"};
-        final String[] lv={"高级护工 长期","普通护工 短期","护士 长期"};
-        final String[] location={"天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里"};
-        SworkerActivity.MyItem[] myItem=new SworkerActivity.MyItem[name.length];
+        final String[] name={"高素雅","唐姗","王丽梦","吴小如","赵雪","文枝花"};
+        final String[] lv={"中医","西医 ","中医","中医","西医 ","中医"};
+        final String[] location={"天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里","天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里"};
+        MworkerActivity.MyItem[] myItem=new MworkerActivity.MyItem[name.length];
         //添加两次，让数据显得多一点
         for (int i = 0; i < name.length; i++) {
-            myItem[i]=new SworkerActivity.MyItem(name[i],lv[i],location[i],R.drawable.icon7);
+            myItem[i]=new MworkerActivity.MyItem(name[i],lv[i],location[i],R.drawable.icon7);
             myItemList.add(myItem[i]);
         }
         for (int i = 0; i < name.length; i++) {
-            myItem[i]=new SworkerActivity.MyItem(name[i],lv[i],location[i],R.drawable.icon7);
+            myItem[i]=new MworkerActivity.MyItem(name[i],lv[i],location[i],R.drawable.icon7);
             myItemList.add(myItem[i]);
         }
         myItemListBackUp.addAll(myItemList);
-        myAdapter=new SworkerActivity.MyAdapter(SworkerActivity.this,R.layout.item_list2,myItemList);
+        myAdapter=new MworkerActivity.MyAdapter(MworkerActivity.this,R.layout.item_list2,myItemList);
         mListView.setAdapter(myAdapter);
 
-       final Intent intent=new Intent(SworkerActivity.this, InfoActivity.class);
+        final Intent intent=new Intent(MworkerActivity.this, InfoActivity.class);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -158,7 +158,7 @@ public class SworkerActivity extends AppCompatActivity {
             View view;
             MyAdapter.ViewHolder viewHolder;
             if (convertView == null) {
-                view = LayoutInflater.from(SworkerActivity.this).inflate(resourceId, parent, false);
+                view = LayoutInflater.from(MworkerActivity.this).inflate(resourceId, parent, false);
                 viewHolder = new MyAdapter.ViewHolder();
                 viewHolder.fruitImage = (ImageView) view.findViewById (R.id.imageView);
                 viewHolder.fruitName = (TextView) view.findViewById (R.id.textView2);
@@ -193,18 +193,18 @@ public class SworkerActivity extends AppCompatActivity {
 
     private LinearLayout mFrameLayout;
     private com.qmuiteam.qmui.widget.QMUITopBar mTopbar_three;
-    
+
     private ListView mListView;
 
     // End Of Content View Elements
 
     private void bindViews() {
-      
+
         mFrameLayout = findViewById(R.id.frameLayout_worker);
-        mTopbar_three = findViewById(R.id.Topbar_worker);
+        mTopbar_three = findViewById(R.id.Topbar_mworker);
         //mDropDownMenu = (com.yyydjk.library.DropDownMenu) activity.findViewById(R.id.dropDownMenu);
-        mListView=findViewById(R.id.listViewhhh);
-        
+        mListView=findViewById(R.id.listViewhhh_mworker);
+
     }
 
 

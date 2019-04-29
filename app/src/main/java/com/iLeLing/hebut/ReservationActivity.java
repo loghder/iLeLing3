@@ -1,61 +1,30 @@
 package com.iLeLing.hebut;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.iLeLing.hebut.Util.TimeHolder;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import cn.qqtheme.framework.picker.DateTimePicker;
 
-public class MaigugongActivity extends AppCompatActivity {
-
-    // Content View Elements
-
-    private LinearLayout mFrameLayout;
-    private com.qmuiteam.qmui.widget.QMUITopBar mTopbar_one;
-    private com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton mQMUIRoundButton22;
-    private com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton mQMUIRoundButton33;
+public class ReservationActivity extends AppCompatActivity {
     private TextView mTimeStart;
     private TextView mTimeEnd;
-    private TextView mTimeMoney;
-    private Button button;
-
-    // End Of Content View Elements
-
-    private void bindViews() {
-
-        mFrameLayout = (LinearLayout) findViewById(R.id.frameLayout);
-        mTopbar_one = (com.qmuiteam.qmui.widget.QMUITopBar) findViewById(R.id.Topbar_one);
-        mQMUIRoundButton22 = (com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton) findViewById(R.id.QMUIRoundButton22);
-        mQMUIRoundButton33 = (com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton) findViewById(R.id.QMUIRoundButton33);
-        mTimeStart = (TextView) findViewById(R.id.timeStart);
-        mTimeEnd = (TextView) findViewById(R.id.timeEnd);
-        mTimeMoney = (TextView) findViewById(R.id.timeMoney);
-        button=findViewById(R.id.button);
-    }
-
-
-
+    private LinearLayout mFrameLayout;
+    QMUIRoundButton submit;
+    int hours;
+    private com.qmuiteam.qmui.widget.QMUITopBar mTopbar_one;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maigugong);
-        bindViews();
-        mTopbar_one.setTitle("预约服务");
-        mTopbar_one.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MaigugongActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_reservation);
+        bindView();
         Time t=new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料。
         t.setToNow(); // 取得系统时间。
         int year = t.year;
@@ -73,7 +42,7 @@ public class MaigugongActivity extends AppCompatActivity {
         mTimeStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateTimePicker picker = new DateTimePicker(MaigugongActivity.this, DateTimePicker.HOUR_24);//24小时值
+                DateTimePicker picker = new DateTimePicker(ReservationActivity.this, DateTimePicker.HOUR_24);//24小时值
                 picker.setDateRangeStart(2019, 4, 1);//日期起点
                 picker.setDateRangeEnd(2020, 1,1);//日期终点
                 picker.setTimeRangeStart(0, 0);//时间范围起点
@@ -94,7 +63,7 @@ public class MaigugongActivity extends AppCompatActivity {
         mTimeEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateTimePicker picker = new DateTimePicker(MaigugongActivity.this, DateTimePicker.HOUR_24);//24小时值
+                DateTimePicker picker = new DateTimePicker(ReservationActivity.this, DateTimePicker.HOUR_24);//24小时值
                 picker.setDateRangeStart(2019, 4, 1);//日期起点
                 picker.setDateRangeEnd(2020, 1,1);//日期终点
                 picker.setTimeRangeStart(0, 0);//时间范围起点
@@ -106,18 +75,25 @@ public class MaigugongActivity extends AppCompatActivity {
                         mTimeEnd.setText(year + "-" + month + "-" + day + "  "
                                 + hour + ":" + minute);
                         TimeHolder.timeSecond =Double.parseDouble(hour);
-                        mTimeMoney.setText(""+(TimeHolder.timeSecond-TimeHolder.timeFirst)*25);
+//                        Toast.setText(""+(TimeHolder.timeSecond-TimeHolder.timeFirst)*25);
+                        hours=(int)(TimeHolder.timeSecond-TimeHolder.timeFirst);
 
                     }
                 });
                 picker.show();
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MaigugongActivity.this,"购买成功",Toast.LENGTH_LONG).show();
+                Toast.makeText(ReservationActivity.this,"预约时长："+hours+" 分钟",Toast.LENGTH_LONG).show();
             }
         });
+    }
+    public void bindView(){
+        mTimeStart=findViewById(R.id.timeS);
+        mTimeEnd=findViewById(R.id.timeE);
+        mFrameLayout=findViewById(R.id.layout);
+        submit=findViewById(R.id.submit);
     }
 }

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:background="@color/white"
+    tools:context=".ReservationActivity">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topbar_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:qmui_topbar_bg_color="@color/modGreen"
+        app:qmui_topbar_text_btn_color_state_list="@android:color/white"
+        app:qmui_topbar_title_color="@android:color/white"></com.qmuiteam.qmui.widget.QMUITopBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/doc2">
+
+        <com.iLeLing.hebut.Util.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/doc1" />
+
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/doc_info"
+                android:background="#fff"
+                android:singleLine="false"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:text="佳园里区卫生所\n地址：天津市北辰佳园里\n"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:text="工作时间：早：8:00---晚：6:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/mini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="体检项目"
+            android:textFontWeight="10"
+            android:textSize="28sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="量体温"
+            android:textSize="25dp"
+            android:textFontWeight="7"
+            android:id="@+id/aa"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textFontWeight="7"
+            android:text="测血压"
+            android:id="@+id/bb"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textFontWeight="7"
+            android:text="测血糖"
+            android:id="@+id/cc"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/mini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="预约时间"
+            android:textFontWeight="10"
+            android:textSize="28sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="起始："
+            android:textColor="@color/gray"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/timeS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2019-04-27  11:19"
+            android:textColor="@color/qmui_config_color_black"
+            android:textSize="24sp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="截止："
+            android:textColor="@color/gray"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/timeE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2019-04-27  11:19"
+            android:textColor="@color/qmui_config_color_black"
+            android:textSize="24sp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+    <CheckBox
+        android:gravity="center"
+        android:text="我已阅读并同意预约服务用户协议及预约服务隐私声明"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_height="wrap_content" />
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:id="@+id/submit"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:padding="4dp"
+        android:text="  确认提交  "
+        android:textColor="@color/white"
+        android:textFontWeight="7"
+        android:textSize="14sp"
+        app:qmui_backgroundColor="@color/darkGreen" />
+</LinearLayout>

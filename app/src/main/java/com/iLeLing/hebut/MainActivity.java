@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.iLeLing.hebut.fragment.FiveFragment;
 import com.iLeLing.hebut.fragment.OneFragment;
+import com.iLeLing.hebut.fragment.SixFragment;
 import com.iLeLing.hebut.fragment.TwoFragment;
 import com.iLeLing.hebut.fragment.FourFragment;
 import com.iLeLing.hebut.Util.PermissionRequestUtil;
@@ -23,7 +24,7 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener, FiveFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener, SixFragment.OnFragmentInteractionListener {
 
     EasyNavigationBar navigationBar;
     //底部Tab相关
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
         fragments.add(new OneFragment());
         fragments.add(new TwoFragment());
         fragments.add(new ThreeFragment());
-        fragments.add(new FiveFragment());
+        fragments.add(new SixFragment());
         navigationBar.titleItems(tabText)
                 .normalIconItems(normalIcon)
                 .selectIconItems(selectIcon)

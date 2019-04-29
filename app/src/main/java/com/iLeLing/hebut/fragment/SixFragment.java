@@ -1,14 +1,18 @@
 package com.iLeLing.hebut.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.iLeLing.hebut.MainActivity;
 import com.iLeLing.hebut.R;
+import com.qmuiteam.qmui.widget.QMUITopBar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,12 +22,12 @@ import com.iLeLing.hebut.R;
  * Use the {@link SixFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SixFragment extends Fragment {
+public class SixFragment extends Fragment implements FiveFragment.OnFragmentInteractionListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private QMUITopBar Topbar_six;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -67,7 +71,18 @@ public class SixFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_six, container, false);
     }
-
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Topbar_six=getActivity().findViewById(R.id.Topbar_six);
+        Topbar_six.setTitle("个人中心");
+        Topbar_six.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -90,6 +105,11 @@ public class SixFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     /**
