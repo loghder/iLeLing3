@@ -25,7 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements PermissionRequestUtil.PermissionRequestListener, FiveFragment.OnFragmentInteractionListener {
 
-    private EasyNavigationBar navigationBar;
+    EasyNavigationBar navigationBar;
     //底部Tab相关
     private String[] tabText = {"首页", "任务", "搜索","账户"};
     //未选中icon
@@ -108,5 +108,9 @@ public class MainActivity extends AppCompatActivity implements PermissionRequest
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public EasyNavigationBar getNavigationBar() {
+        return navigationBar;
     }
 }

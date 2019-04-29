@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.iLeLing.hebut.MainActivity;
 import com.iLeLing.hebut.R;
 import com.iLeLing.hebut.SworkerActivity;
 
@@ -68,6 +69,7 @@ public class OneFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case R.id.imageView5://上门体检
+                        ((MainActivity)getActivity()).getNavigationBar().selectTab(2);
                         break;
                     case R.id.imageView6://短时陪伴
                         break;
