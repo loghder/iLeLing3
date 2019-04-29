@@ -203,7 +203,7 @@ public class SworkerActivity extends AppCompatActivity {
         mFrameLayout = findViewById(R.id.frameLayout_worker);
         mTopbar_three = findViewById(R.id.Topbar_worker);
         //mDropDownMenu = (com.yyydjk.library.DropDownMenu) activity.findViewById(R.id.dropDownMenu);
-        mListView=new ListView(SworkerActivity.this);
+        mListView=findViewById(R.id.listViewhhh);
         
     }
 
