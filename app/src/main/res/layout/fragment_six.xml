@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.SixFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/first0" />
+
+        <com.iLeLing.hebut.Util.CircleImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="64dp"
+            android:adjustViewBounds="true"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView13"
+            app:layout_constraintTop_toTopOf="@+id/imageView13"
+            app:srcCompat="@drawable/icon7" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/white90"
+            android:padding="8dp"
+            android:text="姓名：老李\n年龄：42岁\n地址：天津市北辰区佳园里\nxxx\nxxx"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/imageView14"
+            app:layout_constraintVertical_bias="0.32999998" />
+
+        <!--<com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton-->
+            <!--android:id="@+id/QMUIRoundButton22"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:padding="4dp"-->
+            <!--android:text="联系护工"-->
+            <!--android:textSize="14sp"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/imageView14"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/imageView14"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView10"-->
+            <!--app:qmui_backgroundColor="@color/white" />-->
+
+        <!--<com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton-->
+            <!--android:id="@+id/QMUIRoundButton33"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:padding="4dp"-->
+            <!--android:text="购买服务"-->
+            <!--android:textSize="14sp"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/imageView14"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/textView10"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView10"-->
+            <!--app:qmui_backgroundColor="@color/white" />-->
+
+    </android.support.constraint.ConstraintLayout>
+<ImageView
+    android:src="@drawable/line"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/mini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="我的订单"
+            android:textSize="30sp"
+            android:textFontWeight="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageView
+        android:src="@drawable/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="181dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button4"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="待使用" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            tools:layout_editor_absoluteY="-1dp" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
