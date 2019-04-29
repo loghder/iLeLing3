@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ContactActivity extends AppCompatActivity {
 
-        private QMUITopBar info_topbar;
+        private QMUITopBar contact_topbar;
         private ListView msgListView;
         private EditText inputText;
         private Button send;
@@ -29,9 +29,14 @@ public class ContactActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            info_topbar=findViewById(R.id.info_topbar);
-            info_topbar.setTitle("联系护工");
-            info_topbar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener(){
+
+
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.activity_contact);
+            initMsgs(); // 初始化消息数据
+            contact_topbar=findViewById(R.id.contact_topbar);
+            contact_topbar.setTitle("联系护工");
+            contact_topbar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View v) {
@@ -39,9 +44,6 @@ public class ContactActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-            setContentView(R.layout.activity_contact);
-            initMsgs(); // 初始化消息数据
             adapter = new MsgAdapter(ContactActivity.this, R.layout.msg_item, msgList);
             inputText = (EditText) findViewById(R.id.input_text);
             send = (Button) findViewById(R.id.send);

@@ -163,9 +163,9 @@ public class ThreeFragment extends Fragment {
         //listview添加数据
         myItemList=new ArrayList<>();
         myItemListBackUp=new ArrayList<>();
-        String[] name={"高素雅","唐姗","王丽梦"};
-        String[] lv={"高级护工 长期","普通护工 短期","护士 长期"};
-        String[] location={"天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里"};
+        final String[] name={"高素雅","唐姗","王丽梦"};
+        final String[] lv={"高级护工 长期","普通护工 短期","护士 长期"};
+        final String[] location={"天津市北辰区佳园里","天津市北辰区佳宁里","天津市北辰区佳欣里"};
         MyItem[] myItem=new MyItem[name.length];
         //添加两次，让数据显得多一点
         for (int i = 0; i < name.length; i++) {
@@ -180,19 +180,44 @@ public class ThreeFragment extends Fragment {
         myAdapter=new MyAdapter(getContext(),R.layout.item_list2,myItemList);
         mListView.setAdapter(myAdapter);
         final Activity activity=getActivity();
+        final Intent intent=new Intent(getContext(), InfoActivity.class);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        startActivity(new Intent(getContext(), InfoActivity.class));
+
+                        intent.putExtra("name",name[i]);
+                        intent.putExtra("lv",lv[i]);
+                        intent.putExtra("location",location[i]);
+                        startActivity(intent);
                         break;
                     case 1:
+
+                        intent.putExtra("name",name[i]);
+                        intent.putExtra("lv",lv[i]);
+                        intent.putExtra("location",location[i]);
+                        startActivity(intent);
                         break;
                     case 2:
+
+                        intent.putExtra("name",name[i]);
+                        intent.putExtra("lv",lv[i]);
+                        intent.putExtra("location",location[i]);
+                        startActivity(intent);
                         break;
                     case 3:
+                        intent.putExtra("name",name[i]);
+                        intent.putExtra("lv",lv[i]);
+                        intent.putExtra("location",location[i]);
+                        startActivity(intent);
                         break;
+                        default:
+                            intent.putExtra("name",name[i]);
+                            intent.putExtra("lv",lv[i]);
+                            intent.putExtra("location",location[i]);
+                            startActivity(intent);
+                            break;
                 }
             }
         });

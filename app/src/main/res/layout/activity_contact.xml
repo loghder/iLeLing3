@@ -5,7 +5,7 @@
     android:background="#d8e0e8"
     android:orientation="vertical">
     <com.qmuiteam.qmui.widget.QMUITopBar
-        android:id="@+id/info_topbar"
+        android:id="@+id/contact_topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

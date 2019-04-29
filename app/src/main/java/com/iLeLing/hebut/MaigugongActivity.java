@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class MaigugongActivity extends AppCompatActivity {
     private TextView mTimeStart;
     private TextView mTimeEnd;
     private TextView mTimeMoney;
+    private Button button;
 
     // End Of Content View Elements
 
@@ -35,6 +37,7 @@ public class MaigugongActivity extends AppCompatActivity {
         mTimeStart = (TextView) findViewById(R.id.timeStart);
         mTimeEnd = (TextView) findViewById(R.id.timeEnd);
         mTimeMoney = (TextView) findViewById(R.id.timeMoney);
+        button=findViewById(R.id.button);
     }
 
 
@@ -99,6 +102,12 @@ public class MaigugongActivity extends AppCompatActivity {
                     }
                 });
                 picker.show();
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MaigugongActivity.this,"购买成功",Toast.LENGTH_LONG).show();
             }
         });
     }
